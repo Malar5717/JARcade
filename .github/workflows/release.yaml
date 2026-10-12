@@ -1,0 +1,59 @@
+name: release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            name: jarcade-windows-x64
+            ext: .exe
+          - os: ubuntu-latest
+            name: jarcade-linux-x64
+            ext: ''
+          - os: macos-latest
+            name: jarcade-macos-arm64
+            ext: ''
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: graalvm/setup-graalvm@v1
+        with:
+          java-version: '21'
+          distribution: 'graalvm'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Make gradlew executable
+        shell: bash
+        run: chmod +x gradlew
+
+      - name: Build native binary
+        shell: bash
+        run: ./gradlew nativeCompile --console=plain
+
+      - name: Rename binary
+        shell: bash
+        run: |
+          mv "build/native/nativeCompile/jarcade${{ matrix.ext }}" \
+             "build/native/nativeCompile/${{ matrix.name }}${{ matrix.ext }}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}
+          path: build/native/nativeCompile/${{ matrix.name }}*
+
+      - name: Attach to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/native/nativeCompile/${{ matrix.name }}*

@@ -14,7 +14,7 @@
          vcvars64.bat developer environment.
       3. Runs `gradlew <Task>` (default: nativeCompile) with GRAALVM_HOME set.
 
-    Output: build\native\nativeCompile\JArcade.exe
+    Output: build\native\nativeCompile\jarcade.exe
 
 .PARAMETER GraalVmHome
     Path to a GraalVM JDK. Defaults to $env:GRAALVM_HOME, then auto-detection.

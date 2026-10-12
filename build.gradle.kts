@@ -45,6 +45,8 @@ tasks.jar {
 graalvmNative {
     binaries {
         named("main") {
+            // Name the executable `jarcade` (defaults to the project name, "JArcade").
+            imageName.set("jarcade")
             mainClass.set("com.malar.jarcade.JARcade")
             buildArgs.addAll(
                 // Standalone binary: no JVM fallback.
