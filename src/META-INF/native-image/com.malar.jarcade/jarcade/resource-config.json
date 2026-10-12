@@ -1,0 +1,9 @@
+{
+  "resources": {
+    "includes": [
+      { "pattern": "\\Qcom/malar/jarcade/resource/answers.txt\\E" },
+      { "pattern": "\\Qcom/malar/jarcade/resource/options.txt\\E" },
+      { "pattern": "\\Qcom/malar/jarcade/resource/words.txt\\E" }
+    ]
+  }
+}

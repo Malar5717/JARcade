@@ -1,0 +1,16 @@
+/out
+/bin
+build/
+.gradle/
+*.class
+*.jar
+# Keep the Gradle wrapper jar: ./gradlew cannot bootstrap without it.
+!gradle/wrapper/gradle-wrapper.jar
+*.iml
+.DS_Store
+Thumbs.db
+.idea/
+sources.txt
+# Docs withheld from the initial commits; may be added later.
+AGENTS.md
+decisions.md
