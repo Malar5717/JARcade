@@ -95,7 +95,7 @@ jobs:
           for d in npm/jarcade-win32-x64 npm/jarcade-linux-x64 npm/jarcade-darwin-arm64 npm/jarcade; do
             (cd "$d" && npm pkg set version="$VERSION")
           done
-          for p in jarcade-win32-x64 jarcade-linux-x64 jarcade-darwin-arm64; do
+          for p in "@malar_/jarcade-win32-x64" "@malar_/jarcade-linux-x64" "@malar_/jarcade-darwin-arm64"; do
             (cd npm/jarcade && npm pkg set "optionalDependencies.$p=$VERSION")
           done
 
@@ -104,10 +104,22 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          set -euo pipefail
-          # Platform packages first, then the wrapper that depends on them.
+          set -uo pipefail
+          failed=0
           for d in npm/jarcade-win32-x64 npm/jarcade-linux-x64 npm/jarcade-darwin-arm64 npm/jarcade; do
-            echo "::group::npm publish $d"
-            (cd "$d" && npm publish --access public --provenance)
-            echo "::endgroup::"
+            name=$(node -p "require('./$d/package.json').name")
+            version=$(node -p "require('./$d/package.json').version")
+            if npm view "${name}@${version}" version >/dev/null 2>&1; then
+              echo "::notice::${name}@${version} is already published; skipping."
+              continue
+            fi
+            echo "::group::npm publish ${name}@${version}"
+            if (cd "$d" && npm publish --access public --provenance); then
+              echo "::endgroup::"
+            else
+              echo "::endgroup::"
+              echo "::error::failed to publish ${name}@${version}"
+              failed=1
+            fi
           done
+          exit "$failed"

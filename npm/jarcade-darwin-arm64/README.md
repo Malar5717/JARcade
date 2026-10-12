@@ -1,4 +1,4 @@
-# jarcade-darwin-arm64
+# @malar_/jarcade-darwin-arm64
 
 macOS arm64 (Apple Silicon) native binary for
 [`jarcade`](https://www.npmjs.com/package/jarcade).

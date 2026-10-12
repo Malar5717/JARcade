@@ -14,9 +14,9 @@ const path = require("node:path");
 
 // Maps Node's process.platform/process.arch to the package and binary name.
 const TARGETS = {
-  "win32-x64": { pkg: "jarcade-win32-x64", bin: "jarcade.exe" },
-  "linux-x64": { pkg: "jarcade-linux-x64", bin: "jarcade" },
-  "darwin-arm64": { pkg: "jarcade-darwin-arm64", bin: "jarcade" },
+  "win32-x64": { pkg: "@malar_/jarcade-win32-x64", bin: "jarcade.exe" },
+  "linux-x64": { pkg: "@malar_/jarcade-linux-x64", bin: "jarcade" },
+  "darwin-arm64": { pkg: "@malar_/jarcade-darwin-arm64", bin: "jarcade" },
 };
 
 const key = `${process.platform}-${process.arch}`;

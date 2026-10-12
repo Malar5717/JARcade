@@ -23,9 +23,9 @@ jarcade
 
 | Platform              | Package                 |
 | --------------------- | ----------------------- |
-| Windows x64           | `jarcade-win32-x64`     |
-| Linux x64             | `jarcade-linux-x64`     |
-| macOS (Apple Silicon) | `jarcade-darwin-arm64`  |
+| Windows x64           | `@malar_/jarcade-win32-x64`    |
+| Linux x64             | `@malar_/jarcade-linux-x64`    |
+| macOS (Apple Silicon) | `@malar_/jarcade-darwin-arm64` |
 
 npm installs only the package that matches your OS and CPU; the others are
 skipped automatically.

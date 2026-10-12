@@ -1,4 +1,4 @@
-# jarcade-linux-x64
+# @malar_/jarcade-linux-x64
 
 Linux x64 native binary for [`jarcade`](https://www.npmjs.com/package/jarcade).
 

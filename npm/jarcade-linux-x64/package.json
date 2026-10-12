@@ -1,5 +1,5 @@
 {
-  "name": "jarcade-linux-x64",
+  "name": "@malar_/jarcade-linux-x64",
   "version": "2.0.0",
   "description": "Linux x64 native binary for jarcade.",
   "os": [
@@ -15,5 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/Malar5717/JARcade.git",
     "directory": "npm/jarcade-linux-x64"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -28,8 +28,8 @@
     "directory": "npm/jarcade"
   },
   "optionalDependencies": {
-    "jarcade-win32-x64": "2.0.0",
-    "jarcade-linux-x64": "2.0.0",
-    "jarcade-darwin-arm64": "2.0.0"
+    "@malar_/jarcade-win32-x64": "2.0.0",
+    "@malar_/jarcade-linux-x64": "2.0.0",
+    "@malar_/jarcade-darwin-arm64": "2.0.0"
   }
 }
