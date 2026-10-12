@@ -149,7 +149,7 @@ public class Hangman implements Game {
             }
 
             if (attempts <= 0) {
-                System.out.println(Colors.RED + "Out of attempts!" + Colors.RESET + Colors.BLACK + " The word was: " + word + Colors.RESET);
+                System.out.println(Colors.RED + "Out of attempts!" + Colors.RESET + Colors.YELLOW + " The word was: " + word + Colors.RESET);
                 return;
             }
 

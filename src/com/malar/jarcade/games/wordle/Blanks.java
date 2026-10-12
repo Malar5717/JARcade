@@ -59,7 +59,7 @@ public class Blanks {
             } else if (result[i] == 'Y') {
                 feedback.append('[').append(Colors.YELLOW).append(g).append(Colors.RESET).append(']').append(" ");
             } else {
-                feedback.append('[').append(Colors.BLACK).append(g).append(Colors.RESET).append(']').append(" ");
+                feedback.append('[').append(Colors.GRAY).append(g).append(Colors.RESET).append(']').append(" ");
             }
         }
 

@@ -9,6 +9,7 @@ public class Colors {
     public static final String CYAN = "\033[36m";
     public static final String WHITE = "\033[37m";
     public static final String BLACK = "\033[30m";
+    public static final String GRAY = "\033[90m";
 
     public static final String RESET = "\033[0m";
 

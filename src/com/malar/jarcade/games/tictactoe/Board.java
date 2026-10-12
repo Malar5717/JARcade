@@ -37,12 +37,12 @@ public class Board {
                     System.out.print(". ");
                 }
 
-                if (j < 2) System.out.print(Colors.BLACK + " | " + Colors.RESET);
+                if (j < 2) System.out.print(Colors.GRAY + " | " + Colors.RESET);
             }
 
             System.out.println();
 
-            if (i < 2) System.out.println(Colors.BLACK + "  ---|----|---" + Colors.RESET);
+            if (i < 2) System.out.println(Colors.GRAY + "  ---|----|---" + Colors.RESET);
         }
     }
 
