@@ -14,3 +14,12 @@ sources.txt
 # Docs withheld from the initial commits; may be added later.
 AGENTS.md
 decisions.md
+# npm: platform binaries are copied in from the GitHub Release at publish time.
+npm/jarcade-win32-x64/jarcade.exe
+npm/jarcade-linux-x64/jarcade
+npm/jarcade-darwin-arm64/jarcade
+# npm pack tarballs produced while testing locally.
+npm/**/*.tgz
+# JVM crash dumps left behind by Gradle / native-image.
+hs_err_pid*.log
+replay_pid*.log

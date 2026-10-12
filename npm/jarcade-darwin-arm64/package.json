@@ -1,0 +1,19 @@
+{
+  "name": "jarcade-darwin-arm64",
+  "version": "2.0.0",
+  "description": "macOS arm64 native binary for jarcade.",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "files": [
+    "jarcade"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malar5717/JARcade.git",
+    "directory": "npm/jarcade-darwin-arm64"
+  }
+}

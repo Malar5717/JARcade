@@ -1,0 +1,35 @@
+{
+  "name": "jarcade",
+  "version": "2.0.0",
+  "description": "Java-free terminal arcade: Tic Tac Toe, Wordle and Hangman as a single native binary.",
+  "bin": {
+    "jarcade": "bin/jarcade.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [
+    "jarcade",
+    "game",
+    "games",
+    "cli",
+    "terminal",
+    "console",
+    "tictactoe",
+    "wordle",
+    "hangman"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malar5717/JARcade.git",
+    "directory": "npm/jarcade"
+  },
+  "optionalDependencies": {
+    "jarcade-win32-x64": "2.0.0",
+    "jarcade-linux-x64": "2.0.0",
+    "jarcade-darwin-arm64": "2.0.0"
+  }
+}
